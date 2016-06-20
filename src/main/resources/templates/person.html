@@ -5,8 +5,23 @@
     <title>Person</title>
 </head>
 <body>
+{{^user}}
+<form action="/login" method="post">
+    <input type="text" name="username" placeholder="Enter your name"/>
+    <button type="submit">Login</button>
+</form>
+{{/user}}
+
+{{#user}}
+Hello, {{name}}!
+<form action="/logout" method="post" style="display: inline-block">
+    <button type="submit">Logout</button>
+</form>
+{{/user}}
+
 {{#person}}
     {{name}} is from {{city}} and is {{age}} years old.
 {{/person}}
+
 </body>
 </html>
