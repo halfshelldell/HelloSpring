@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class HelloSpringController {
 
+
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String home(Model model, HttpSession session, String name, String city, Integer age) {
         if (name == null) {
